@@ -1,0 +1,38 @@
+<div class="killFeed-Container">
+    <div class="killer-Container" [ngClass]="isAlly ? 'ally' : 'enemy'">
+        <div class="killer-name">
+            {{ killerName }}
+        </div>
+        <div class="killer-character">
+            <img [src]="killerImage" alt="">
+        </div>
+        @if(killAsist.length > 0){
+            <div class="assit-container">
+                @for(asist of killAsist; track $index){
+                    <div class="assit-character">
+                        <img [src]="'Heroes_Icons/' + asist + '.webp'" />
+                    </div>
+                }
+            </div>
+        }
+    </div>
+    <div class="ability-killer-container">
+        <!-- if is normal kill dont show -->
+        @if(!normalKill){        
+            <div class="ability-killer">
+                <img [src]="killMethod" alt="">
+            </div>
+        }
+        <div class="arrow-kill">
+            <mat-icon>arrow_forward_ios</mat-icon>
+        </div>
+    </div>
+    <div class="killed-Container" [ngClass]="!isAlly ? 'ally' : 'enemy'">
+        <div class="killed-character">
+            <img [src]="victimImage" alt="">
+        </div>
+        <div class="killed-name">
+            {{ victimName }}
+        </div>
+    </div>
+</div>

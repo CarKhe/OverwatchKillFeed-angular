@@ -1,0 +1,166 @@
+$main-height: 50px;
+$ally-bg: #218FFE;
+$ally-bg-dark: #1462b0;
+$enemy-bg: #E52B2B;
+$enemy-bg-dark: #b01414;
+$ability-bg: rgba(0, 0, 0, 0.6);
+$text-color: #FFFFFF;
+$font-size: 20px;
+$font-family: 'Arial', sans-serif;
+$border-radius: 2px;
+$hero-img-width: 80px;
+$assist-img-width: 30px;
+
+.killFeed-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: $border-radius;
+    width: 100%;
+    margin: 2px 10px;
+}
+
+.killer-Container{
+    height: $main-height;
+    border-radius: $border-radius;
+    display: flex;
+    padding: 5px;
+    &.ally{
+        background-color: $ally-bg;
+        .killer-character{ background-color: $ally-bg-dark; }
+        .assit-character{ background-color: $ally-bg-dark; }
+    }
+    &.enemy{
+        background-color: $enemy-bg;
+        .killer-character{ background-color: $enemy-bg-dark; }
+        .assit-character{ background-color: $enemy-bg-dark; }
+    }
+
+    .killer-name{
+        display: flex;
+        align-items: center;
+        color: $text-color;
+        font-size: $font-size;
+        font-family: $font-family;
+        margin-left: 10px;
+        margin-right: 5px;
+    }
+
+    .killer-character{
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        height: $main-height;
+        margin-right: 3px;
+        overflow: hidden;
+        img{
+            width: $hero-img-width;
+            height: $main-height;
+            object-fit: cover;
+        }
+    }
+
+    .assit-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: $main-height;
+        
+
+        .assit-character{
+            display: flex;
+            align-items: center;
+            border-radius: $border-radius;
+            height: $main-height;
+            margin-right: 3px;
+            overflow: hidden;
+
+            img{
+                width: $assist-img-width;
+                height: $main-height;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .arrow-kill{
+        display: flex;
+        align-items: center;
+        color: $text-color;
+        font-size: $font-size;
+        font-family: $font-family;
+    }
+}
+
+.ability-killer-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    background-color: $ability-bg;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    width: 65px;
+
+    .ability-killer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        margin-right: 3px;
+
+        img{
+            width: $assist-img-width;
+            height: $assist-img-width;
+            object-fit: cover;
+        }
+    }
+
+    .arrow-kill{
+        display: flex;
+        align-items: center;
+        color: $text-color;
+        font-size: $font-size;
+        font-family: $font-family;
+    }
+}
+
+.killed-Container{
+    height: $main-height;
+    border-radius: $border-radius;
+    display: flex;
+    padding: 5px;
+    &.ally{
+        background-color: $ally-bg;
+        .killed-character{ background-color: $ally-bg-dark; }
+    }
+    &.enemy{
+        background-color: $enemy-bg;
+        .killed-character{ background-color: $enemy-bg-dark; }
+    }
+
+    .killed-character{
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        height: $main-height;
+        margin-right: 2px;
+        overflow: hidden;
+        img{
+            width: $hero-img-width;
+            height: $main-height;
+            object-fit: cover;
+        }
+    }
+
+    .killed-name{
+        display: flex;
+        align-items: center;
+        color: $text-color;
+        font-size: $font-size;
+        font-family: $font-family;
+        margin-right: 10px;
+        margin-left: 5px;
+    }
+}
