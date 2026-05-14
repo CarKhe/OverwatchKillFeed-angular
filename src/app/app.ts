@@ -3,12 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { KillFeed } from "./Components/kill-feed/kill-feed";
 
 const mockKills = [
-  { killerName: 'Tracer', victimName: 'Reaper', killerHero: 'Tracer', victimHero: 'Reaper', normalKill: false, killMethodName: 'Ability-tracer4', killAsist: [], isAlly: true },
-  { killerName: 'Kiriko', victimName: 'Bastion', killerHero: 'Kiriko', victimHero: 'Bastion', normalKill: false, killMethodName: 'Quick_melee', killAsist: ['Cassidy'], isAlly: false },
-  { killerName: 'Reaper', victimName: 'Cassidy', killerHero: 'Reaper', victimHero: 'Cassidy', normalKill: true, killMethodName: '', killAsist: [], isAlly: true },
-  { killerName: 'Bastion', victimName: 'Tracer', killerHero: 'Bastion', victimHero: 'Tracer', normalKill: false, killMethodName: 'Ability-dva2', killAsist: ['Kiriko'], isAlly: false },
-  { killerName: 'Cassidy', victimName: 'Kiriko', killerHero: 'Cassidy', victimHero: 'Kiriko', normalKill: false, killMethodName: 'Quick_melee', killAsist: [], isAlly: true },
-  { killerName: 'Reaper', victimName: 'Tracer', killerHero: 'Reaper', victimHero: 'Tracer', normalKill: false, killMethodName: 'Ability-dva2', killAsist: ['Bastion', 'Cassidy'], isAlly: false },
+  { killerName: 'Tracer', victimName: 'Reaper', killerHero: 'Tracer', victimHero: 'Reaper', normalKill: false, killMethodName: 'Ability-tracer4', killAsist: [], isAlly: true, critic: true, onFire: true },
+  { killerName: 'Kiriko', victimName: 'Bastion', killerHero: 'Kiriko', victimHero: 'Bastion', normalKill: false, killMethodName: 'Quick_melee', killAsist: ['Cassidy'], isAlly: false, critic: false, onFire: false },
+  { killerName: 'Reaper', victimName: 'Cassidy', killerHero: 'Reaper', victimHero: 'Cassidy', normalKill: true, killMethodName: '', killAsist: [], isAlly: true, critic: false, onFire: false },
+  { killerName: 'Bastion', victimName: 'Tracer', killerHero: 'Bastion', victimHero: 'Tracer', normalKill: false, killMethodName: 'Ability-dva2', killAsist: ['Kiriko'], isAlly: false, critic: true, onFire: true },
+  { killerName: 'Cassidy', victimName: 'Kiriko', killerHero: 'Cassidy', victimHero: 'Kiriko', normalKill: false, killMethodName: 'Quick_melee', killAsist: [], isAlly: true, critic: false, onFire: true },
+  { killerName: 'Reaper', victimName: 'Tracer', killerHero: 'Reaper', victimHero: 'Tracer', normalKill: false, killMethodName: 'Ability-dva2', killAsist: ['Bastion', 'Cassidy'], isAlly: false, critic: false, onFire: false },
 ];
 
 @Component({
@@ -49,6 +49,8 @@ export class App {
     ref.instance.killMethodName = data.killMethodName;
     ref.instance.killAsist = data.killAsist ?? [];
     ref.instance.isAlly = data.isAlly;
+    ref.instance.critic = data.critic;
+    ref.instance.onFire = data.onFire;
     ref.instance.ngOnInit();
 
     setTimeout(() => {

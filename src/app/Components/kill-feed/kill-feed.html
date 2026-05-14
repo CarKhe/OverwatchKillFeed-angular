@@ -1,4 +1,9 @@
 <div class="killFeed-Container">
+    @if(onFire){
+        <div class="onfireCharacter" [ngClass]="isAlly ? 'ally' : 'enemy'">
+            <img [src]="onFireGif">
+        </div>
+    }
     <div class="killer-Container" [ngClass]="isAlly ? 'ally' : 'enemy'">
         <div class="killer-name">
             {{ killerName }}
@@ -19,8 +24,8 @@
     <div class="ability-killer-container">
         <!-- if is normal kill dont show -->
         @if(!normalKill){        
-            <div class="ability-killer">
-                <img [src]="killMethod" alt="">
+            <div class="ability-killer" >
+                <img [src]="killMethod" [ngClass]="critic ? 'critic' : ''" alt="">
             </div>
         }
         <div class="arrow-kill">
