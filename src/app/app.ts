@@ -26,11 +26,11 @@ export class App {
   private killIndex = 0;
 
   ngOnInit(): void {
-    this.spawnInterval = setInterval(() => {
-      const data = mockKills[this.killIndex % mockKills.length];
-      this.killIndex++;
-      this.addKillFeed(data);
-    }, 1000);
+    // this.spawnInterval = setInterval(() => {
+    //   const data = mockKills[this.killIndex % mockKills.length];
+    //   this.killIndex++;
+    //   this.addKillFeed(data);
+    // }, 1000);
   }
 
   ngOnDestroy(): void {
@@ -51,10 +51,11 @@ export class App {
     ref.instance.isAlly = data.isAlly;
     ref.instance.critic = data.critic;
     ref.instance.onFire = data.onFire;
+    ref.instance.ultimateKill = data.ultimateKill;
     ref.instance.ngOnInit();
 
-    setTimeout(() => {
-      ref.destroy();
-    }, 5000);
+    // setTimeout(() => {
+    //   ref.destroy();
+    // }, 5000);
   }
 }

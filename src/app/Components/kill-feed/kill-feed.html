@@ -28,6 +28,13 @@
                 <img [src]="killMethod" [ngClass]="critic ? 'critic' : ''" alt="">
             </div>
         }
+        @if(ultimateKill){
+            <div class="ultimate-killer">
+                <div class="ultimate-circle">
+                    <img [src]="killMethod" [ngClass]="critic ? 'critic' : ''" alt="">
+                </div>
+            </div>
+        }
         <div class="arrow-kill">
             <mat-icon>arrow_forward_ios</mat-icon>
         </div>

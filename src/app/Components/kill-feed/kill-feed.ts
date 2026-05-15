@@ -18,6 +18,7 @@ export class KillFeed implements OnInit {
   @Input() victimName: string = 'Reaper';
   @Input() victimHero: string = 'Reaper';
   @Input() normalKill: boolean = true;
+  @Input() ultimateKill: boolean = false;
   @Input() isAlly: boolean = true;
   @Input() killAsist: string[] = [];
   @Input() killMethodName: string = 'Ability-dva2';
